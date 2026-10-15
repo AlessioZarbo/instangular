@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { PostModel } from '../../../models/post-model';
 import { PostService } from '../../../services/post-service/post-service';
-import { PostModel } from '../../../app/models/post-model';
 
 @Component({
   selector: 'app-overview',
