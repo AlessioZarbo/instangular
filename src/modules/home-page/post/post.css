@@ -1,0 +1,108 @@
+.post-card {
+	width: min(100%, 42rem);
+	margin: 1.25rem auto;
+	overflow: hidden;
+	color: #26312e;
+	background: #fffdf8;
+	border: 1px solid #e7e3da;
+	border-radius: 1.25rem;
+	box-shadow: 0 1rem 2.5rem rgba(45, 52, 49, 0.08);
+}
+
+.post-card__header,
+.post-card__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.post-card__header {
+	padding: 1rem 1.1rem;
+	color: #858b83;
+	font-size: 0.8rem;
+	font-weight: 650;
+}
+
+.post-card__image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1.5;
+	object-fit: cover;
+	background: #dfe5db;
+}
+
+.post-card__content {
+	padding: 1.1rem;
+}
+
+.post-card h2 {
+	margin: 0 0 0.5rem;
+	font-size: 1.35rem;
+	line-height: 1.2;
+}
+
+.post-card__body {
+	margin: 0;
+	color: #59645d;
+	line-height: 1.55;
+}
+
+.post-card__tags,
+.post-card__reactions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.post-card__tags {
+	margin-top: 1rem;
+}
+
+.post-card__tags span,
+.post-card__reactions span {
+	padding: 0.35rem 0.6rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+}
+
+.post-card__tags span {
+	color: #54692b;
+	background: #eef4dc;
+}
+
+.post-card__footer {
+	align-items: flex-start;
+	gap: 1rem;
+	margin-top: 1.1rem;
+	color: #858b83;
+	font-size: 0.75rem;
+}
+
+.post-card__reactions {
+	justify-content: flex-end;
+}
+
+.post-card__reactions span {
+	color: #59645d;
+	background: #f0f1ec;
+}
+
+@media (max-width: 30rem) {
+	.post-card {
+		margin-block: 0.8rem;
+		border-radius: 1rem;
+	}
+
+	.post-card__header,
+	.post-card__content {
+		padding-inline: 0.85rem;
+	}
+
+	.post-card__footer {
+		flex-direction: column;
+	}
+
+	.post-card__reactions {
+		justify-content: flex-start;
+	}
+}

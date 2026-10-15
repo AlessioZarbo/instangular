@@ -11,6 +11,4 @@ export class Post {
 
   @Input()
   post: PostModel | undefined;
-
-  constructor() { }
 }

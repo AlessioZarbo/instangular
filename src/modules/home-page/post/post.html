@@ -1,4 +1,31 @@
 @if (post) {
-  <p>{{ post.title }}</p>
-  <p>{{ post.body }}</p>
+  <article class="post-card">
+    <header class="post-card__header">
+      <span>Post #{{ post.id }}</span>
+      <span>Utente #{{ post.userId }}</span>
+    </header>
+
+    <img
+      class="post-card__image"
+      [src]="'https://picsum.photos/seed/post-' + post.id + '/1200/760'"
+      [alt]="post.title"
+    />
+
+    <div class="post-card__content">
+      <h2>{{ post.title }}</h2>
+      <p class="post-card__body">{{ post.body }}</p>
+
+      @if (post.tags.length) {
+        <div class="post-card__tags" aria-label="Tag del post">
+          @for (tag of post.tags; track tag) {
+            <span>#{{ tag }}</span>
+          }
+        </div>
+      }
+
+      <footer class="post-card__footer">
+        <span>{{ post.views }} visualizzazioni</span>
+      </footer>
+    </div>
+  </article>
 }

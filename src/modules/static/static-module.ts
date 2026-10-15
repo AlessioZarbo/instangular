@@ -7,4 +7,4 @@ import { Navbar } from './navbar/navbar';
   imports: [CommonModule],
   exports: [Navbar],
 })
-export class NavbarModule {}
+export class StaticModule {}
