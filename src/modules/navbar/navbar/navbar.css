@@ -1,0 +1,124 @@
+:host {
+    --navbar-ink: #f7f4ed;
+    --navbar-muted: #a8aaa5;
+    --navbar-panel: #202522;
+    --navbar-highlight: #d7f26b;
+    position: fixed;
+    right: 0;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    left: 0;
+    z-index: 1000;
+    display: block;
+    width: min(calc(100% - 2rem), 60rem);
+    margin: 0 auto;
+}
+
+.navbar {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    min-height: 4.5rem;
+    margin: 0 auto;
+    color: var(--navbar-ink);
+    background: var(--navbar-panel);
+    border: 1px solid rgba(247, 244, 237, 0.12);
+    border-radius: 1.25rem;
+    box-shadow: 0 1rem 2.5rem rgba(32, 37, 34, 0.16);
+}
+
+.navbar::after {
+    position: absolute;
+    inset: auto 1.2rem -0.2rem;
+    height: 0.2rem;
+    content: '';
+    background: var(--navbar-highlight);
+    border-radius: 999px;
+    opacity: 0.8;
+}
+
+.navbar__group {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.navbar__group--right {
+    justify-content: flex-end;
+}
+
+.tab {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    place-items: center;
+    color: var(--navbar-muted);
+    background: transparent;
+    border: 0;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.tab:hover {
+    color: var(--navbar-ink);
+    background: rgba(247, 244, 237, 0.08);
+    transform: translateY(-2px);
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--navbar-highlight);
+    outline-offset: 3px;
+}
+
+.tab svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.tab--home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3.55rem;
+    height: 3.55rem;
+    color: #202522;
+    background: var(--navbar-highlight);
+    border-radius: 1.1rem;
+    box-shadow: 0 0.45rem 1rem rgba(215, 242, 107, 0.18);
+    transform: translate(-50%, -50%);
+}
+
+.tab--home:hover {
+    color: #202522;
+    background: #e3fa8d;
+    transform: translate(-50%, calc(-50% - 2px));
+}
+
+.tab--home svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (max-width: 30rem) {
+    .navbar {
+        min-height: 4rem;
+    }
+
+    .tab {
+        width: 2.7rem;
+        height: 2.7rem;
+    }
+
+    .tab--home {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+}
