@@ -2,7 +2,8 @@ import { NgModule, provideBrowserGlobalErrorListeners, provideZoneChangeDetectio
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { HomePageModule } from '../modules/home-page/home-page-module';
+import { App } from './root/app';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomePageModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
