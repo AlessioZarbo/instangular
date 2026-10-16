@@ -1,5 +1,14 @@
 <app-search-bar></app-search-bar>
 
+@if (this.posts.length === 0) {
+    <p class="no-posts">Nessun post trovato</p>
+} @else {
+    <div>
+        @for (post of this.posts; track post.title) {
+            <app-post [post]="post"></app-post>
+        }
+    </div>
+}
 @for (post of this.posts; track post.title) {
 
     <app-post [post]="post"></app-post>
