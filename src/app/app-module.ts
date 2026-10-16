@@ -2,9 +2,9 @@ import { NgModule, provideBrowserGlobalErrorListeners, provideZoneChangeDetectio
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
-import { PagesModule } from '../pages/pages-module';
 import { App } from './root/app';
 import { SharedModule } from './shared/shared-module';
+import { PagesModule } from './pages/pages-module';
 
 @NgModule({
   declarations: [
