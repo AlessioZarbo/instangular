@@ -104,4 +104,19 @@ export class PostService {
       ),
     );
   }
+
+  /**
+   * Filters the list of posts by a user ID.
+   * @param userId The ID of the user whose posts to display.
+   * @returns An observable that emits the list of posts for the specified user.
+   */
+  searchByUserId(userId: number): Observable<PostModel[]> {
+    return this._http.get<PostsResponse>(`${this._baseUrl}/user/${userId}`).pipe(
+      map((response) => response.posts),
+      tap((posts) => {
+        this._posts.next(posts);
+        posts.forEach((post) => this.synchronizeTags(post));
+      }),
+    );
+  }
 }

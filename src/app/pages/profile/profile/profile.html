@@ -1,0 +1,43 @@
+<main class="profile-page">
+    <section class="profile-hero" aria-labelledby="profile-title">
+        <div class="profile-avatar" aria-hidden="true">
+            {{ this.userDetails?.firstName?.charAt(0) }}{{ this.userDetails?.lastName?.charAt(0) }}
+        </div>
+
+        <div class="profile-intro">
+            <p class="profile-eyebrow">Il tuo profilo</p>
+            <h1 id="profile-title">
+                {{ this.userDetails?.firstName }} {{ this.userDetails?.lastName }}
+            </h1>
+            <p class="profile-meta">Utente #{{ this.userDetails?.id }}</p>
+        </div>
+
+        <div class="profile-stat" aria-label="Numero di post pubblicati">
+            <strong>{{ this.userPosts.length }}</strong>
+            <span>post pubblicati</span>
+        </div>
+    </section>
+
+    <section class="profile-posts" aria-labelledby="posts-title">
+        <div class="section-heading">
+            <div>
+                <p class="profile-eyebrow">La tua attività</p>
+                <h2 id="posts-title">I tuoi post</h2>
+            </div>
+        </div>
+
+        @if (this.userPosts.length === 0) {
+            <div class="no-posts">
+                <span class="no-posts__mark" aria-hidden="true">+</span>
+                <h3>Nessun post trovato</h3>
+                <p>Quando pubblicherai qualcosa, apparirà qui.</p>
+            </div>
+        } @else {
+            <div class="posts-grid">
+                @for (post of this.userPosts; track post.id) {
+                    <app-post [post]="post"></app-post>
+                }
+            </div>
+        }
+    </section>
+</main>
