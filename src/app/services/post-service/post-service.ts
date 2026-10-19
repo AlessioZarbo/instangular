@@ -27,7 +27,7 @@ export class PostService {
   private _posts: BehaviorSubject<PostModel[]> = new BehaviorSubject<PostModel[]>([]);
 
   /**
-   * A list of tags associated with the posts. This property is currently not used in the service but can be utilized for filtering or categorizing posts based on tags.
+   * A list of tags associated with the posts.
    */
   private _tags: string[] = [];
   get tags(): string[] {
