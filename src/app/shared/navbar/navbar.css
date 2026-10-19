@@ -15,9 +15,9 @@
 
 .navbar {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
     min-height: 4.5rem;
     margin: 0 auto;
@@ -36,16 +36,6 @@
     background: var(--navbar-highlight);
     border-radius: 999px;
     opacity: 0.8;
-}
-
-.navbar__group {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-}
-
-.navbar__group--right {
-    justify-content: flex-end;
 }
 
 .tab {
@@ -73,38 +63,29 @@
     outline-offset: 3px;
 }
 
-.tab svg {
-    width: 1.35rem;
-    height: 1.35rem;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.8;
+.tab mat-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 .tab--home {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3.55rem;
-    height: 3.55rem;
     color: #202522;
     background: var(--navbar-highlight);
     border-radius: 1.1rem;
     box-shadow: 0 0.45rem 1rem rgba(215, 242, 107, 0.18);
-    transform: translate(-50%, -50%);
 }
 
 .tab--home:hover {
     color: #202522;
     background: #e3fa8d;
-    transform: translate(-50%, calc(-50% - 2px));
 }
 
-.tab--home svg {
-    width: 1.5rem;
-    height: 1.5rem;
+.tab--home mat-icon {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 1.65rem;
 }
 
 @media (max-width: 30rem) {

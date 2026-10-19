@@ -31,7 +31,6 @@ export class Overview {
 
     this._postService.posts$.subscribe((posts) => {
       this.posts = posts;
-      console.log('Posts updated:', this.posts);
     });
 
     this._postService.getPosts().subscribe();
