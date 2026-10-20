@@ -1,0 +1,11 @@
+services:
+  frontend:
+    container_name: sito_Angular
+    image: nginx:1.31.7
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:80"
+    volumes:
+      - ./dist/instangular/browser:/usr/share/nginx/html

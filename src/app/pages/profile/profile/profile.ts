@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PostService } from '../../../services/post-service/post-service';
 import { PostModel } from '../../../models/post-model';
 import { UserModel } from '../../../models/user-model';
@@ -11,7 +11,7 @@ import { UserService } from '../../../services/user-service/user-service';
   styleUrl: './profile.css',
 })
 export class Profile {
-  
+
   /**
    * The list of posts associated with the user.
    */
@@ -24,8 +24,8 @@ export class Profile {
 
   /**
    * The profile service.
-   * @param _postService The post service used to fetch posts associated with the user. 
-   * @param _userService The profile service used to manage user profile data and posts. 
+   * @param _postService The post service used to fetch posts associated with the user.
+   * @param _userService The profile service used to manage user profile data and posts.
    */
   constructor(
     private _postService: PostService,

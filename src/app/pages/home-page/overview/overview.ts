@@ -22,17 +22,17 @@ export class Overview {
    * Creates an instance of the Overview component.
    * @param _postService The post service.
    */
-  constructor(private _postService: PostService) {}
+  constructor(private _postService: PostService) { }
 
   /**
    * Lifecycle hook that is called after the component has been initialized.
    */
   ngOnInit(): void {
 
+    this._postService.getPosts().subscribe();
+
     this._postService.posts$.subscribe((posts) => {
       this.posts = posts;
     });
-
-    this._postService.getPosts().subscribe();
   }
 }
